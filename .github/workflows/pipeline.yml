@@ -9,10 +9,10 @@ jobs:
   deploy:  
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v2
         with:
           node-version: 16
       - name: install Dependencies
@@ -23,3 +23,9 @@ jobs:
         run: npm run build
       - name: test
         run: npm test
+      - name: E2E tests
+        uses: cypress-io/github-action@v2
+        with: 
+          command: npm run test:e2e
+          start: npm run start-test
+          wait-on: http://localhost:5000
