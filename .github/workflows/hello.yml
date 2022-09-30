@@ -9,7 +9,7 @@ jobs: #Trabajos que realizara el workflow
   hello_world: #Nombre del job
     runs-on: ubuntu-latest #SO donde correra el job
     steps: #pasos que debe ejecutar el job
-      - name: Echo the message  
+      - name: Echo the message  #nombre del paso (es opcional ponerlo)
         run: | #Barra vertical nos sirve para escribir texto debajo
           echo "Holis!" 
       - name: Dime la fecha
