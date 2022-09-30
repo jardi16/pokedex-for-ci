@@ -1,17 +1,13 @@
-name: Say hello
+name: Say hello #Nombre del workflow
 
-on:
+on: #Ejecuta una serio de instrucciones configuradas abajo
   push:
     branches:
       - main
 
-jobs:
-  hello_world:
-    runs-on: ubuntu-18.04
-    steps:
-      - name: Echo the message
-        run: |
-          echo "Hola midu!"
-      - name: Dime la fecha
-        run: date
-      - run: ls -l
+jobs: #Trabajos que realizara el workflow
+  hello_world: #Nombre del job
+    runs-on: ubuntu-latest #SO donde correra el job
+    steps: #pasos que debe ejecutar el job
+      - name: Echo the message  
+        run: echo "Holis!" 
